@@ -208,7 +208,7 @@ void CC2500Component::loop() {
 
 			char s[fifo_length*2+1];
 			to_hex(s, &packet[0], fifo_length);
-			// ESP_LOGV(TAG, "  data: 0x%s", s);
+			ESP_LOGV(TAG, "  data: 0x%s", s);
 
 			bool checksum_valid = (bool) (packet[fifo_length - 1] & 0b10000000);
 			if(!checksum_valid) {
