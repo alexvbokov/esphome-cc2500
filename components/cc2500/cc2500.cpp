@@ -212,7 +212,7 @@ void CC2500Component::loop() {
 
 			bool checksum_valid = (bool) (packet[fifo_length - 1] & 0b10000000);
 			if(!checksum_valid) {
-				ESP_LOGW(TAG, "Invalid checksum");
+				ESP_LOGW(TAG, "Invalid Checksum");
 			} else {
 				bool success = false;
 				for (auto device : this->devices_) {
