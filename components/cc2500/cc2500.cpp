@@ -313,9 +313,6 @@ void CC2500Client::send(uint8_t *data, uint8_t length) {
 	command.channel = this->channel_;
 	command.length = length;
 	command.data = data;
-	ESP_LOGV(TAG, "    device address: %d", command.device_address);
-	ESP_LOGV(TAG, "    data: %d", command.data);
-
 	this->parent_->send(command);
 }
 
